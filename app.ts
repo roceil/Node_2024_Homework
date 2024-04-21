@@ -1,4 +1,5 @@
 import express, { type Express } from "express"
+import "module-alias/register"
 import dotenv from "dotenv"
 import connectDB from "./configs/dbConn"
 
