@@ -1,1 +1,242 @@
-{"openapi":"3.0.1","info":{"title":"功課","description":"","version":"1.0.0"},"tags":[],"paths":{"/api/posts":{"get":{"summary":"取得所有貼文","deprecated":false,"description":"","tags":[],"parameters":[],"responses":{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{}}}}}},"security":[]},"post":{"summary":"新增貼文","deprecated":false,"description":"","tags":[],"parameters":[],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{}},"example":{"name":"Example Post Name","tags":["tag1","tag2","tag3"],"type":"Example Type","image":"http://example.com/image.png","content":"This is an example content for the post."}}}},"responses":{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{}}}}}},"security":[]},"delete":{"summary":"刪除所有貼文","deprecated":false,"description":"","tags":[],"parameters":[],"responses":{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{}}}}}},"security":[]}},"/api/healthy-check":{"get":{"summary":"健康度檢查","deprecated":false,"description":"","tags":[],"parameters":[],"responses":{"200":{"description":"成功","content":{"application/json":{"schema":{"type":"object","properties":{}}}}}},"security":[]}}},"components":{"schemas":{},"securitySchemes":{}},"servers":[{"url":"http://localhost:3000","description":"开发环境"},{"url":"https://node-2024-homework.onrender.com","description":"测试环境"}]}
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "功課",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/api/posts": {
+      "get": {
+        "summary": "取得所有貼文",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-149051688-run"
+      },
+      "post": {
+        "summary": "新增貼文",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "name": "test post",
+                "tags": [
+                  "tag1",
+                  "tag2",
+                  "tag3"
+                ],
+                "type": "Example Type",
+                "image": "http://example.com/image.png",
+                "content": "This is an example content for the post."
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-167124310-run"
+      },
+      "delete": {
+        "summary": "刪除所有貼文",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-167127036-run"
+      }
+    },
+    "/api/healthy-check": {
+      "get": {
+        "summary": "健康度檢查",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-167136885-run"
+      }
+    },
+    "/api/posts/{post-id}": {
+      "put": {
+        "summary": "編輯貼文內容",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "post-id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "{{post-id}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "content": "測試編輯貼文"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-168476122-run"
+      }
+    },
+    "/api/post/{post-id}": {
+      "delete": {
+        "summary": "刪除單筆貼文",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "post-id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "{{post-id}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/4046184/apis/api-168485870-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "开发环境"
+    },
+    {
+      "url": "https://node-2024-homework.onrender.com",
+      "description": "测试环境"
+    }
+  ]
+}
