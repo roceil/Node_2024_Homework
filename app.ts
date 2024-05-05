@@ -5,6 +5,7 @@ import connectDB from "./configs/dbConn"
 import globalErrorHandler from "@/utils/globalErrorHandler"
 
 import postRouter from "@/routes/post"
+import authRouter from "@/routes/auth"
 import healthyCheckRouter from "@/routes/healthy-check"
 
 dotenv.config({ path: ".env.local" })
@@ -21,6 +22,7 @@ void connectDB()
 
 /* Router */
 app.use("/api", postRouter)
+app.use("/api", authRouter)
 app.use("/api", healthyCheckRouter)
 
 /* Error Handler */
