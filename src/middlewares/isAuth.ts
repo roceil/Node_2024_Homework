@@ -1,6 +1,7 @@
 import { type Request, type Response, type NextFunction } from "express"
 import jwt from "jsonwebtoken"
 import appErrorHandler from "@/utils/appErrorHandler"
+import { type UserData } from "@/types/express"
 
 const isAuth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const { authorization } = req.headers
@@ -20,7 +21,7 @@ const isAuth = async (req: Request, res: Response, next: NextFunction): Promise<
   // 解密 Token 時過濾 Bearer
   const token = authorization.split(" ")[1]
   const salt = process.env.JWT_SECRET as jwt.Secret
-  const decodedObj = jwt.verify(token, salt) as jwt.JwtPayload
+  const decodedObj = jwt.verify(token, salt) as UserData
 
   req.userData = decodedObj
 

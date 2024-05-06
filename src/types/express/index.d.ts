@@ -1,6 +1,6 @@
 // to make the file a module and avoid the TypeScript error
 export {}
-interface UserData extends jwt.JwtPayload {
+export interface UserData extends jwt.JwtPayload {
   account: string
   userName: string
   iat: number
