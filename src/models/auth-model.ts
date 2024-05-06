@@ -12,11 +12,16 @@ const authSchema = new mongoose.Schema({
   userName: {
     type: String,
     required: [true, "UserName 為必填欄位"]
+  },
+  gender: {
+    type: String,
+    default: null
   }
 }, {
   timestamps: true,
   versionKey: false
 })
 
-const Post = mongoose.model("Auth", authSchema)
-export default Post
+const Auth = mongoose.model("Auth", authSchema)
+
+export default Auth

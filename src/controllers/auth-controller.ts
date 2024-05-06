@@ -121,21 +121,9 @@ const login = async (req: Request, res: Response, next: NextFunction): Promise<v
  * 重設密碼
  */
 const resetPassword = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  const { authorization } = req.headers
+  const userData = req.userData
 
   const { newPassword, confirmNewPassword } = req.body as { newPassword: string, confirmNewPassword: string }
-
-  // 檢查有無 Token
-  if (authorization === undefined) {
-    appErrorHandler(400, "缺少 Token", next)
-    return
-  }
-
-  // 檢查 Token 格式
-  if (!authorization.startsWith("Bearer ") || authorization.split(" ").length < 2) {
-    appErrorHandler(400, "Token 格式不正確或缺少", next)
-    return
-  }
 
   // 檢查必填欄位
   if (newPassword === "" || confirmNewPassword === "" || newPassword === undefined || confirmNewPassword === undefined) {
@@ -143,14 +131,9 @@ const resetPassword = async (req: Request, res: Response, next: NextFunction): P
     return
   }
 
-  // 解密 Token 時過濾 Bearer
-  const token = authorization.split(" ")[1]
-  const salt = process.env.JWT_SECRET as jwt.Secret
-  const decodedObj = jwt.verify(token, salt) as jwt.JwtPayload
-
   // 檢查信箱是否存在
   const auth = await Auth.findOne({
-    account: decodedObj.account
+    account: userData.account
   })
 
   // 檢查信箱是否存在
